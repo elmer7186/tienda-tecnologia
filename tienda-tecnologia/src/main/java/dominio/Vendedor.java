@@ -1,6 +1,7 @@
 package dominio;
 
 import dominio.repositorio.RepositorioProducto;
+import dominio.excepcion.GarantiaExtendidaException;
 import dominio.repositorio.RepositorioGarantiaExtendida;
 
 public class Vendedor {
@@ -18,7 +19,19 @@ public class Vendedor {
 
 	public void generarGarantia(String codigo) {
 
-		throw new UnsupportedOperationException("Método pendiente por implementar");
+		Producto producto1 = repositorioGarantia.obtenerProductoConGarantiaPorCodigo(codigo);
+		if (producto1 != null) {
+			throw new GarantiaExtendidaException(EL_PRODUCTO_TIENE_GARANTIA);
+		}
+
+		// TODO agregar datos de vencimiento de la garantia y valor
+
+		Producto producto = repositorioProducto.obtenerPorCodigo(codigo);
+		GarantiaExtendida garantiaExtendida = new GarantiaExtendida(producto);
+		repositorioGarantia.agregar(garantiaExtendida);
+
+		// throw new UnsupportedOperationException("Método pendiente por
+		// implementar");
 
 	}
 
