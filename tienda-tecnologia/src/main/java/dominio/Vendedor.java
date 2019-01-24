@@ -26,7 +26,6 @@ public class Vendedor {
 	public Vendedor(RepositorioProducto repositorioProducto, RepositorioGarantiaExtendida repositorioGarantia) {
 		this.repositorioProducto = repositorioProducto;
 		this.repositorioGarantia = repositorioGarantia;
-
 	}
 
 	public void generarGarantia(String codigo, String nombreCliente) {
@@ -45,11 +44,11 @@ public class Vendedor {
 		Date fechaVencimiento = null;
 		double precioGarantia = 0;
 		if (producto.getPrecio() > PRECIO_LIMITE_GARANTIA) {
-			fechaVencimiento = calcularFechaFinGarantia(DIAS_VIGENCIA_GARANTIA_MAYOR);
-			precioGarantia = getValorGarantia(producto.getPrecio());
+			fechaVencimiento = calcularFechaFinGarantiaHabiles(DIAS_VIGENCIA_GARANTIA_MAYOR);
+			precioGarantia = (producto.getPrecio() * PORCENTAJE_VALOR_GARANTIA_MAYOR) / 100;
 		} else {
-			fechaVencimiento = calcularFechaFinGarantia(DIAS_VIGENCIA_GARANTIA_MENOR);
-			precioGarantia = getValorGarantia(producto.getPrecio());
+			fechaVencimiento = calcularFechaFinGarantiaNoHabiles(DIAS_VIGENCIA_GARANTIA_MENOR);
+			precioGarantia = (producto.getPrecio() * PORCENTAJE_VALOR_GARANTIA_MENOR) / 100;
 		}
 
 		GarantiaExtendida garantiaExtendida = new GarantiaExtendida(producto, new Date(), fechaVencimiento,
@@ -57,8 +56,13 @@ public class Vendedor {
 		repositorioGarantia.agregar(garantiaExtendida);
 	}
 
-	private Date calcularFechaFinGarantia(int dias) {
-		LocalDate fechaIteracion = LocalDate.of(2018, 8, 16);
+	private Date calcularFechaFinGarantiaNoHabiles(int dias) {
+		LocalDate fechaVenciento = LocalDate.now().plusDays(dias);
+		return Date.from(fechaVenciento.atStartOfDay(ZoneId.systemDefault()).toInstant());
+	}
+
+	private Date calcularFechaFinGarantiaHabiles(int dias) {
+		LocalDate fechaIteracion = LocalDate.now();
 		Date fechaFinGarantia = null;
 
 		while (dias > 0) {
@@ -74,16 +78,6 @@ public class Vendedor {
 		}
 		fechaFinGarantia = Date.from(fechaIteracion.atStartOfDay(ZoneId.systemDefault()).toInstant());
 		return fechaFinGarantia;
-	}
-
-	private double getValorGarantia(double precio) {
-		double valorGarantia = 0;
-		if (precio > PRECIO_LIMITE_GARANTIA) {
-			valorGarantia = (precio * PORCENTAJE_VALOR_GARANTIA_MAYOR) / 100;
-		} else {
-			valorGarantia = (precio * PORCENTAJE_VALOR_GARANTIA_MENOR) / 100;
-		}
-		return valorGarantia;
 	}
 
 	private boolean codigoConGarantia(String codigo) {
