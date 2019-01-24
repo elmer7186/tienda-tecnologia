@@ -1,14 +1,12 @@
 package dominio;
 
-import dominio.repositorio.RepositorioProducto;
-
-import java.time.DayOfWeek;
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.Date;
 
 import dominio.excepcion.GarantiaExtendidaException;
 import dominio.repositorio.RepositorioGarantiaExtendida;
+import dominio.repositorio.RepositorioProducto;
+import utilidades.CalendarUtils;
+import utilidades.StringUtils;
 
 public class Vendedor {
 
@@ -30,7 +28,7 @@ public class Vendedor {
 
 	public void generarGarantia(String codigo, String nombreCliente) {
 
-		if (!codigoConGarantia(codigo)) {
+		if (!codigoConGarantiaExtendida(codigo)) {
 			throw new GarantiaExtendidaException(EL_PRODUCTO_NO_TIENE_GARANTIA_EXTENDIDA);
 		}
 
@@ -44,10 +42,10 @@ public class Vendedor {
 		Date fechaVencimiento = null;
 		double precioGarantia = 0;
 		if (producto.getPrecio() > PRECIO_LIMITE_GARANTIA) {
-			fechaVencimiento = calcularFechaFinGarantiaHabiles(DIAS_VIGENCIA_GARANTIA_MAYOR);
+			fechaVencimiento = CalendarUtils.calcularFechaDiasHabiles(DIAS_VIGENCIA_GARANTIA_MAYOR);
 			precioGarantia = (producto.getPrecio() * PORCENTAJE_VALOR_GARANTIA_MAYOR) / 100;
 		} else {
-			fechaVencimiento = calcularFechaFinGarantiaNoHabiles(DIAS_VIGENCIA_GARANTIA_MENOR);
+			fechaVencimiento = CalendarUtils.calcularFechaDiasCalendario(DIAS_VIGENCIA_GARANTIA_MENOR);
 			precioGarantia = (producto.getPrecio() * PORCENTAJE_VALOR_GARANTIA_MENOR) / 100;
 		}
 
@@ -55,37 +53,12 @@ public class Vendedor {
 				precioGarantia, nombreCliente);
 		repositorioGarantia.agregar(garantiaExtendida);
 	}
-
-	private Date calcularFechaFinGarantiaNoHabiles(int dias) {
-		LocalDate fechaVenciento = LocalDate.now().plusDays(dias);
-		return Date.from(fechaVenciento.atStartOfDay(ZoneId.systemDefault()).toInstant());
-	}
-
-	private Date calcularFechaFinGarantiaHabiles(int dias) {
-		LocalDate fechaIteracion = LocalDate.now();
-		Date fechaFinGarantia = null;
-
-		while (dias > 0) {
-			if (fechaIteracion.getDayOfWeek() != DayOfWeek.MONDAY) {
-				dias--;
-			}
-			fechaIteracion = fechaIteracion.plusDays(1);
-		}
-		if (fechaIteracion.getDayOfWeek() == DayOfWeek.SUNDAY) {
-			fechaIteracion = fechaIteracion.plusDays(2);
-		} else if (fechaIteracion.getDayOfWeek() == DayOfWeek.MONDAY) {
-			fechaIteracion = fechaIteracion.plusDays(1);
-		}
-		fechaFinGarantia = Date.from(fechaIteracion.atStartOfDay(ZoneId.systemDefault()).toInstant());
-		return fechaFinGarantia;
-	}
-
-	private boolean codigoConGarantia(String codigo) {
+	
+	private boolean codigoConGarantiaExtendida(String codigo) {
 		if (codigo == null) {
 			return Boolean.FALSE;
 		}
-		int numeroVocales = codigo.replaceAll("[^aeiouAEIOU·ÈÌÛ˙¡…Õ”⁄]", "").length();
-		return !(numeroVocales == 3);
+		return StringUtils.contarVocales(codigo) != 3;
 	}
 
 	public boolean tieneGarantia(String codigo) {
