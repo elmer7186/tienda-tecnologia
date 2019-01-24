@@ -63,7 +63,7 @@ public class Vendedor {
 	 *            cadena que contiene el c&oacute;digo de un producto
 	 * @return <tt>true<tt> si al c&oacute;digo se le puede aplicar garantia
 	 */
-	private boolean codigoConGarantiaExtendida(String codigo) {
+	public boolean codigoConGarantiaExtendida(String codigo) {
 		if (codigo == null) {
 			return Boolean.FALSE;
 		}
