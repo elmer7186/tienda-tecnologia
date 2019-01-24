@@ -39,21 +39,30 @@ public class Vendedor {
 
 		Producto producto = repositorioProducto.obtenerPorCodigo(codigo);
 
+		Date fechaSolicitud = new Date();
 		Date fechaVencimiento = null;
 		double precioGarantia = 0;
 		if (producto.getPrecio() > PRECIO_LIMITE_GARANTIA) {
-			fechaVencimiento = CalendarUtils.calcularFechaDiasHabiles(DIAS_VIGENCIA_GARANTIA_MAYOR);
+			fechaVencimiento = CalendarUtils.calcularFechaDiasHabiles(fechaSolicitud, DIAS_VIGENCIA_GARANTIA_MAYOR);
 			precioGarantia = (producto.getPrecio() * PORCENTAJE_VALOR_GARANTIA_MAYOR) / 100;
 		} else {
-			fechaVencimiento = CalendarUtils.calcularFechaDiasCalendario(DIAS_VIGENCIA_GARANTIA_MENOR);
+			fechaVencimiento = CalendarUtils.calcularFechaDiasCalendario(fechaSolicitud, DIAS_VIGENCIA_GARANTIA_MENOR);
 			precioGarantia = (producto.getPrecio() * PORCENTAJE_VALOR_GARANTIA_MENOR) / 100;
 		}
 
-		GarantiaExtendida garantiaExtendida = new GarantiaExtendida(producto, new Date(), fechaVencimiento,
+		GarantiaExtendida garantiaExtendida = new GarantiaExtendida(producto, fechaSolicitud, fechaVencimiento,
 				precioGarantia, nombreCliente);
 		repositorioGarantia.agregar(garantiaExtendida);
 	}
-	
+
+	/**
+	 * Permite verificar si el c&oacute;digo cumple con las caracteristicas de
+	 * garant&iacute;a extendida
+	 * 
+	 * @param codigo
+	 *            cadena que contiene el c&oacute;digo de un producto
+	 * @return <tt>true<tt> si al c&oacute;digo se le puede aplicar garantia
+	 */
 	private boolean codigoConGarantiaExtendida(String codigo) {
 		if (codigo == null) {
 			return Boolean.FALSE;
@@ -61,6 +70,13 @@ public class Vendedor {
 		return StringUtils.contarVocales(codigo) != 3;
 	}
 
+	/**
+	 * Permite verificar si el producto tiene garant&iacute;a
+	 * 
+	 * @param codigo
+	 *            cadena que contiene el c&oacute;digo de un producto
+	 * @return <tt>true<tt> si el producto tiene garantia asignada
+	 */
 	public boolean tieneGarantia(String codigo) {
 		Producto producto = repositorioGarantia.obtenerProductoConGarantiaPorCodigo(codigo);
 		return producto != null;
