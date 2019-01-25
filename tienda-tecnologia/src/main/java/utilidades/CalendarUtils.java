@@ -18,7 +18,7 @@ public class CalendarUtils {
 	}
 
 	/**
-	 * Permite sumarle d&iacute;as a una fecha teniendo en cuenta d&iacute;as no
+	 * Permite sumarle d&iacute;as a una fecha teniendo en cuenta d&iacute;as
 	 * habiles
 	 * 
 	 * @param dias

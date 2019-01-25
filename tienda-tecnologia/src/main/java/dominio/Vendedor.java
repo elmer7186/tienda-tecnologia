@@ -21,13 +21,15 @@ public class Vendedor {
 	private RepositorioProducto repositorioProducto;
 	private RepositorioGarantiaExtendida repositorioGarantia;
 
+	public Vendedor() {
+	}
+
 	public Vendedor(RepositorioProducto repositorioProducto, RepositorioGarantiaExtendida repositorioGarantia) {
 		this.repositorioProducto = repositorioProducto;
 		this.repositorioGarantia = repositorioGarantia;
 	}
 
 	public void generarGarantia(String codigo, String nombreCliente) {
-
 		if (!codigoConGarantiaExtendida(codigo)) {
 			throw new GarantiaExtendidaException(EL_PRODUCTO_NO_TIENE_GARANTIA_EXTENDIDA);
 		}
@@ -40,19 +42,48 @@ public class Vendedor {
 		Producto producto = repositorioProducto.obtenerPorCodigo(codigo);
 
 		Date fechaSolicitud = new Date();
-		Date fechaVencimiento = null;
-		double precioGarantia = 0;
-		if (producto.getPrecio() > PRECIO_LIMITE_GARANTIA) {
-			fechaVencimiento = CalendarUtils.calcularFechaDiasHabiles(fechaSolicitud, DIAS_VIGENCIA_GARANTIA_MAYOR);
-			precioGarantia = (producto.getPrecio() * PORCENTAJE_VALOR_GARANTIA_MAYOR) / 100;
-		} else {
-			fechaVencimiento = CalendarUtils.calcularFechaDiasCalendario(fechaSolicitud, DIAS_VIGENCIA_GARANTIA_MENOR);
-			precioGarantia = (producto.getPrecio() * PORCENTAJE_VALOR_GARANTIA_MENOR) / 100;
-		}
+		Date fechaVencimiento = calcularFechaVencimiento(fechaSolicitud, producto.getPrecio());
+		double precioGarantia = calcularValorGarantia(producto.getPrecio());
 
 		GarantiaExtendida garantiaExtendida = new GarantiaExtendida(producto, fechaSolicitud, fechaVencimiento,
 				precioGarantia, nombreCliente);
 		repositorioGarantia.agregar(garantiaExtendida);
+	}
+
+	/**
+	 * Permite calcular la fecha de vencimiento de la garantia extendida
+	 * 
+	 * @param fechaInicio
+	 *            fecha de inicio o solicitud de la garantía extendida
+	 * @param precio
+	 *            valor del producto
+	 * @return
+	 */
+	public Date calcularFechaVencimiento(Date fechaInicio, double precio) {
+		Date fechaVencimiento = null;
+		if (precio > PRECIO_LIMITE_GARANTIA) {
+			fechaVencimiento = CalendarUtils.calcularFechaDiasHabiles(fechaInicio, DIAS_VIGENCIA_GARANTIA_MAYOR);
+		} else {
+			fechaVencimiento = CalendarUtils.calcularFechaDiasCalendario(fechaInicio, DIAS_VIGENCIA_GARANTIA_MENOR);
+		}
+		return fechaVencimiento;
+	}
+
+	/**
+	 * Permite calcular el valor de la garantia extendida
+	 * 
+	 * @param precio
+	 *            valor del producto
+	 * @return
+	 */
+	public double calcularValorGarantia(double precio) {
+		double precioGarantia = 0;
+		if (precio > PRECIO_LIMITE_GARANTIA) {
+			precioGarantia = (precio * PORCENTAJE_VALOR_GARANTIA_MAYOR) / 100;
+		} else {
+			precioGarantia = (precio * PORCENTAJE_VALOR_GARANTIA_MENOR) / 100;
+		}
+		return precioGarantia;
 	}
 
 	/**

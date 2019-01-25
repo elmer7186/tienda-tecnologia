@@ -15,7 +15,6 @@ public class ProductoTest {
 
 	@Test
 	public void crearProductoTest() {
-		
 		// arrange
 		ProductoTestDataBuilder productoTestDataBuilder = new ProductoTestDataBuilder().
 				conNombre(NOMBRE_PRODUCTO).

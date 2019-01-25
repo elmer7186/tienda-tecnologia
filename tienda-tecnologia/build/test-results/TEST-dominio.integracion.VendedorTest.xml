@@ -1,106 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="dominio.integracion.VendedorTest" tests="2" skipped="0" failures="2" errors="0" timestamp="2019-01-23T01:59:14" hostname="elmer" time="9.258">
+<testsuite name="dominio.integracion.VendedorTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2019-01-25T03:48:17" hostname="elmer" time="3.253">
   <properties/>
-  <testcase name="generarGarantiaTest" classname="dominio.integracion.VendedorTest" time="9.074">
-    <failure message="java.lang.UnsupportedOperationException: Método pendiente por implementar" type="java.lang.UnsupportedOperationException">java.lang.UnsupportedOperationException: Método pendiente por implementar
-	at dominio.Vendedor.generarGarantia(Vendedor.java:21)
-	at dominio.integracion.VendedorTest.generarGarantiaTest(VendedorTest.java:53)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:86)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:49)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:69)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:48)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
-	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.messaging.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
-	at org.gradle.messaging.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
-	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:105)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
-	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.messaging.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:360)
-	at org.gradle.internal.concurrent.DefaultExecutorFactory$StoppableExecutorImpl$1.run(DefaultExecutorFactory.java:64)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-</failure>
-  </testcase>
-  <testcase name="productoYaTieneGarantiaTest" classname="dominio.integracion.VendedorTest" time="0.183">
-    <failure message="java.lang.UnsupportedOperationException: Método pendiente por implementar" type="java.lang.UnsupportedOperationException">java.lang.UnsupportedOperationException: Método pendiente por implementar
-	at dominio.Vendedor.generarGarantia(Vendedor.java:21)
-	at dominio.integracion.VendedorTest.productoYaTieneGarantiaTest(VendedorTest.java:72)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:86)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:49)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:69)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:48)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
-	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.messaging.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
-	at org.gradle.messaging.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
-	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:105)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
-	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.messaging.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:360)
-	at org.gradle.internal.concurrent.DefaultExecutorFactory$StoppableExecutorImpl$1.run(DefaultExecutorFactory.java:64)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-</failure>
-  </testcase>
+  <testcase name="generarGarantiaTest" classname="dominio.integracion.VendedorTest" time="2.715"/>
+  <testcase name="generarGarantiaMayorTest" classname="dominio.integracion.VendedorTest" time="0.161"/>
+  <testcase name="productoYaTieneGarantiaTest" classname="dominio.integracion.VendedorTest" time="0.137"/>
+  <testcase name="generarGarantiaMenorTest" classname="dominio.integracion.VendedorTest" time="0.117"/>
+  <testcase name="productoNoTieneGarantiaExtendidaTest" classname="dominio.integracion.VendedorTest" time="0.12"/>
   <system-out><![CDATA[Hibernate: drop table GarantiaExtendida if exists
 Hibernate: drop table Producto if exists
 Hibernate: drop sequence if exists hibernate_sequence
@@ -110,6 +15,58 @@ Hibernate: create table Producto (id bigint not null, codigo varchar(255) not nu
 Hibernate: alter table GarantiaExtendida add constraint FKbjleix4hk82jtyvep72rxvung foreign key (ID_PRODUCTO) references Producto
 Hibernate: call next value for hibernate_sequence
 Hibernate: insert into Producto (codigo, nombre, precio, id) values (?, ?, ?, ?)
+Hibernate: select garantiaex0_.id as id1_0_, garantiaex0_.fechaFinGarantia as fechaFin2_0_, garantiaex0_.fechaSolicitudGarantia as fechaSol3_0_, garantiaex0_.nombreCliente as nombreCl4_0_, garantiaex0_.precio as precio5_0_, garantiaex0_.ID_PRODUCTO as ID_PRODU6_0_ from GarantiaExtendida garantiaex0_ cross join Producto productoen1_ where garantiaex0_.ID_PRODUCTO=productoen1_.id and productoen1_.codigo=?
+Hibernate: select productoen0_.id as id1_1_, productoen0_.codigo as codigo2_1_, productoen0_.nombre as nombre3_1_, productoen0_.precio as precio4_1_ from Producto productoen0_ where productoen0_.codigo=?
+Hibernate: select productoen0_.id as id1_1_, productoen0_.codigo as codigo2_1_, productoen0_.nombre as nombre3_1_, productoen0_.precio as precio4_1_ from Producto productoen0_ where productoen0_.codigo=?
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into GarantiaExtendida (fechaFinGarantia, fechaSolicitudGarantia, nombreCliente, precio, ID_PRODUCTO, id) values (?, ?, ?, ?, ?, ?)
+Hibernate: select garantiaex0_.id as id1_0_, garantiaex0_.fechaFinGarantia as fechaFin2_0_, garantiaex0_.fechaSolicitudGarantia as fechaSol3_0_, garantiaex0_.nombreCliente as nombreCl4_0_, garantiaex0_.precio as precio5_0_, garantiaex0_.ID_PRODUCTO as ID_PRODU6_0_ from GarantiaExtendida garantiaex0_ cross join Producto productoen1_ where garantiaex0_.ID_PRODUCTO=productoen1_.id and productoen1_.codigo=?
+Hibernate: select garantiaex0_.id as id1_0_, garantiaex0_.fechaFinGarantia as fechaFin2_0_, garantiaex0_.fechaSolicitudGarantia as fechaSol3_0_, garantiaex0_.nombreCliente as nombreCl4_0_, garantiaex0_.precio as precio5_0_, garantiaex0_.ID_PRODUCTO as ID_PRODU6_0_ from GarantiaExtendida garantiaex0_ cross join Producto productoen1_ where garantiaex0_.ID_PRODUCTO=productoen1_.id and productoen1_.codigo=?
+Hibernate: drop table GarantiaExtendida if exists
+Hibernate: drop table Producto if exists
+Hibernate: drop sequence if exists hibernate_sequence
+Hibernate: create sequence hibernate_sequence start with 1 increment by 1
+Hibernate: create table GarantiaExtendida (id bigint not null, fechaFinGarantia timestamp, fechaSolicitudGarantia timestamp, nombreCliente varchar(255), precio double not null, ID_PRODUCTO bigint, primary key (id))
+Hibernate: create table Producto (id bigint not null, codigo varchar(255) not null, nombre varchar(255) not null, precio double not null, primary key (id))
+Hibernate: alter table GarantiaExtendida add constraint FKbjleix4hk82jtyvep72rxvung foreign key (ID_PRODUCTO) references Producto
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into Producto (codigo, nombre, precio, id) values (?, ?, ?, ?)
+Hibernate: select garantiaex0_.id as id1_0_, garantiaex0_.fechaFinGarantia as fechaFin2_0_, garantiaex0_.fechaSolicitudGarantia as fechaSol3_0_, garantiaex0_.nombreCliente as nombreCl4_0_, garantiaex0_.precio as precio5_0_, garantiaex0_.ID_PRODUCTO as ID_PRODU6_0_ from GarantiaExtendida garantiaex0_ cross join Producto productoen1_ where garantiaex0_.ID_PRODUCTO=productoen1_.id and productoen1_.codigo=?
+Hibernate: select productoen0_.id as id1_1_, productoen0_.codigo as codigo2_1_, productoen0_.nombre as nombre3_1_, productoen0_.precio as precio4_1_ from Producto productoen0_ where productoen0_.codigo=?
+Hibernate: select productoen0_.id as id1_1_, productoen0_.codigo as codigo2_1_, productoen0_.nombre as nombre3_1_, productoen0_.precio as precio4_1_ from Producto productoen0_ where productoen0_.codigo=?
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into GarantiaExtendida (fechaFinGarantia, fechaSolicitudGarantia, nombreCliente, precio, ID_PRODUCTO, id) values (?, ?, ?, ?, ?, ?)
+Hibernate: select garantiaex0_.id as id1_0_, garantiaex0_.fechaFinGarantia as fechaFin2_0_, garantiaex0_.fechaSolicitudGarantia as fechaSol3_0_, garantiaex0_.nombreCliente as nombreCl4_0_, garantiaex0_.precio as precio5_0_, garantiaex0_.ID_PRODUCTO as ID_PRODU6_0_ from GarantiaExtendida garantiaex0_ cross join Producto productoen1_ where garantiaex0_.ID_PRODUCTO=productoen1_.id and productoen1_.codigo=?
+Hibernate: drop table GarantiaExtendida if exists
+Hibernate: drop table Producto if exists
+Hibernate: drop sequence if exists hibernate_sequence
+Hibernate: create sequence hibernate_sequence start with 1 increment by 1
+Hibernate: create table GarantiaExtendida (id bigint not null, fechaFinGarantia timestamp, fechaSolicitudGarantia timestamp, nombreCliente varchar(255), precio double not null, ID_PRODUCTO bigint, primary key (id))
+Hibernate: create table Producto (id bigint not null, codigo varchar(255) not null, nombre varchar(255) not null, precio double not null, primary key (id))
+Hibernate: alter table GarantiaExtendida add constraint FKbjleix4hk82jtyvep72rxvung foreign key (ID_PRODUCTO) references Producto
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into Producto (codigo, nombre, precio, id) values (?, ?, ?, ?)
+Hibernate: select garantiaex0_.id as id1_0_, garantiaex0_.fechaFinGarantia as fechaFin2_0_, garantiaex0_.fechaSolicitudGarantia as fechaSol3_0_, garantiaex0_.nombreCliente as nombreCl4_0_, garantiaex0_.precio as precio5_0_, garantiaex0_.ID_PRODUCTO as ID_PRODU6_0_ from GarantiaExtendida garantiaex0_ cross join Producto productoen1_ where garantiaex0_.ID_PRODUCTO=productoen1_.id and productoen1_.codigo=?
+Hibernate: select productoen0_.id as id1_1_, productoen0_.codigo as codigo2_1_, productoen0_.nombre as nombre3_1_, productoen0_.precio as precio4_1_ from Producto productoen0_ where productoen0_.codigo=?
+Hibernate: select productoen0_.id as id1_1_, productoen0_.codigo as codigo2_1_, productoen0_.nombre as nombre3_1_, productoen0_.precio as precio4_1_ from Producto productoen0_ where productoen0_.codigo=?
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into GarantiaExtendida (fechaFinGarantia, fechaSolicitudGarantia, nombreCliente, precio, ID_PRODUCTO, id) values (?, ?, ?, ?, ?, ?)
+Hibernate: select garantiaex0_.id as id1_0_, garantiaex0_.fechaFinGarantia as fechaFin2_0_, garantiaex0_.fechaSolicitudGarantia as fechaSol3_0_, garantiaex0_.nombreCliente as nombreCl4_0_, garantiaex0_.precio as precio5_0_, garantiaex0_.ID_PRODUCTO as ID_PRODU6_0_ from GarantiaExtendida garantiaex0_ cross join Producto productoen1_ where garantiaex0_.ID_PRODUCTO=productoen1_.id and productoen1_.codigo=?
+Hibernate: drop table GarantiaExtendida if exists
+Hibernate: drop table Producto if exists
+Hibernate: drop sequence if exists hibernate_sequence
+Hibernate: create sequence hibernate_sequence start with 1 increment by 1
+Hibernate: create table GarantiaExtendida (id bigint not null, fechaFinGarantia timestamp, fechaSolicitudGarantia timestamp, nombreCliente varchar(255), precio double not null, ID_PRODUCTO bigint, primary key (id))
+Hibernate: create table Producto (id bigint not null, codigo varchar(255) not null, nombre varchar(255) not null, precio double not null, primary key (id))
+Hibernate: alter table GarantiaExtendida add constraint FKbjleix4hk82jtyvep72rxvung foreign key (ID_PRODUCTO) references Producto
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into Producto (codigo, nombre, precio, id) values (?, ?, ?, ?)
+Hibernate: select garantiaex0_.id as id1_0_, garantiaex0_.fechaFinGarantia as fechaFin2_0_, garantiaex0_.fechaSolicitudGarantia as fechaSol3_0_, garantiaex0_.nombreCliente as nombreCl4_0_, garantiaex0_.precio as precio5_0_, garantiaex0_.ID_PRODUCTO as ID_PRODU6_0_ from GarantiaExtendida garantiaex0_ cross join Producto productoen1_ where garantiaex0_.ID_PRODUCTO=productoen1_.id and productoen1_.codigo=?
+Hibernate: select productoen0_.id as id1_1_, productoen0_.codigo as codigo2_1_, productoen0_.nombre as nombre3_1_, productoen0_.precio as precio4_1_ from Producto productoen0_ where productoen0_.codigo=?
+Hibernate: select productoen0_.id as id1_1_, productoen0_.codigo as codigo2_1_, productoen0_.nombre as nombre3_1_, productoen0_.precio as precio4_1_ from Producto productoen0_ where productoen0_.codigo=?
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into GarantiaExtendida (fechaFinGarantia, fechaSolicitudGarantia, nombreCliente, precio, ID_PRODUCTO, id) values (?, ?, ?, ?, ?, ?)
+Hibernate: select garantiaex0_.id as id1_0_, garantiaex0_.fechaFinGarantia as fechaFin2_0_, garantiaex0_.fechaSolicitudGarantia as fechaSol3_0_, garantiaex0_.nombreCliente as nombreCl4_0_, garantiaex0_.precio as precio5_0_, garantiaex0_.ID_PRODUCTO as ID_PRODU6_0_ from GarantiaExtendida garantiaex0_ cross join Producto productoen1_ where garantiaex0_.ID_PRODUCTO=productoen1_.id and productoen1_.codigo=?
 Hibernate: drop table GarantiaExtendida if exists
 Hibernate: drop table Producto if exists
 Hibernate: drop sequence if exists hibernate_sequence
