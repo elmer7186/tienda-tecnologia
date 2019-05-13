@@ -18,6 +18,6 @@ valor día moto = 4000<br>
 Cuando sale un carro del parqueadero se cobra por horas si permaneció menos de 9 horas en el parqueadero, de lo contrario se cobra por días.
 * El valor del día comienza entre las 9 horas de parqueo y finaliza pasadas 24 horas de parqueo.
 * El parqueadero funciona 24 horas, los 7 días de la semana.<br>
-#EJEMPLOS: 
+<b>EJEMPLOS:</b><br> 
 * Si el carro permaneció un día y 3 horas se debe cobrar 11.000
 * Si la moto permaneció un 10 horas y es de 650CC se cobra 6.000
